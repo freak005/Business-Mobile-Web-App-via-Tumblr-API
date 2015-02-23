@@ -1,0 +1,23 @@
+<ion-view title="Blog">
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-header padding">
+
+		<div ng-repeat="post in blogPosts">
+
+		    <tumblr-text  ng-if="post.type == 'text'"  ng-model="post"></tumblr-text>
+		    <tumblr-quote ng-if="post.type == 'quote'" ng-model="post"></tumblr-quote>
+		    <tumblr-chat  ng-if="post.type == 'chat'"  ng-model="post"></tumblr-chat>
+		    <tumblr-link  ng-if="post.type == 'link'"  ng-model="post"></tumblr-link>
+		    <tumblr-photo ng-if="post.type == 'photo'" ng-model="post"></tumblr-photo>
+		   	<tumblr-video ng-if="post.type == 'video'"  ng-model="post"></tumblr-video>
+		   	<tumblr-audio ng-if="post.type == 'audio'"  ng-model="post"></tumblr-audio>
+
+		</div>
+
+		<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" icon="ion-loading-c"></ion-infinite-scroll>
+
+	</ion-content>
+
+</ion-view>

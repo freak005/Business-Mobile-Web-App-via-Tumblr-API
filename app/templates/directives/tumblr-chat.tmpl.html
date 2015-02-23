@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="item item-divider">
+    {{post.title}}
+  </div>
+  <div class="item item-text-wrap">
+    <ul class="conversation_lines">
+      <li class="chat_line" ng-repeat="d in post.dialogue">
+        <strong>{{d.label}}</strong> {{d.phrase}}
+      </li>
+    </ul>
+    <tumblr-tags ng-model="post"></tumblr-tags>
+  </div>
+</div>

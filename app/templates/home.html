@@ -1,0 +1,26 @@
+<ion-view title="{{sliders.response.blog.title}}">
+
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+	<ion-content class="has-header">
+
+		<!-- slider -->
+		<div ng-repeat="(idx, post) in sliders.response.posts">
+			<slider-post ng-model="post"></slider-post>
+		</div>
+
+		<!-- feature -->
+		<div ng-repeat="(idx, post) in features.response.posts | orderBy:'id' ">
+			<feature-post ng-model="post"></feature-post>
+		</div>
+
+		<!-- contact -->
+		<div class="list card" ng-repeat="(idx, post) in contact.response.posts | orderBy:'id' ">
+			<contact-post ng-model="post"></contact-post>
+		</div>
+
+	</ion-content>
+
+</ion-view>

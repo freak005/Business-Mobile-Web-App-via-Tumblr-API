@@ -1,0 +1,15 @@
+<div class="card">
+
+	<div class="item item-divider embed-content">
+
+		<!-- tumblr uploaded audio -->
+		<div class="embed-responsive" ng-bind-html="trustSource(post.embed)"></div>
+
+	</div>
+
+	<div class="item item-text-wrap">
+		<div ng-bind-html="post.caption"></div>
+		<tumblr-tags ng-model="post"></tumblr-tags>
+	</div>
+
+</div>

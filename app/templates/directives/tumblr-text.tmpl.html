@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="item item-divider">
+    {{post.title}}
+  </div>
+  <div class="item item-text-wrap">
+
+    <div ng-bind-html="post.body"></div>
+    <tumblr-tags ng-model="post"></tumblr-tags>
+  </div>
+</div>

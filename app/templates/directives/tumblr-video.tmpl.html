@@ -1,0 +1,26 @@
+<div class="card">
+
+	<div class="item item-divider">
+
+		<!-- tumblr uploaded video -->
+		<div ng-if="post.video_type == 'tumblr'">
+
+			<video ng-src="{{trustSource(post.video_url)}}" width="100%" height="340px"></video>
+
+		</div>
+
+		<!-- youtube/vimeo video -->
+		<div ng-if="post.video_type == 'youtube' || post.video_type == 'vimeo'">
+
+			<embed-video ng-href="{{post.permalink_url}}" width="500" height="340"></embed-video>
+
+		</div>
+
+	</div>
+
+	<div class="item item-text-wrap">
+		<div ng-bind-html="post.caption"></div>
+		<tumblr-tags ng-model="post"></tumblr-tags>
+	</div>
+
+</div>

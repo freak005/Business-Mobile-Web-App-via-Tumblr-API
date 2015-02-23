@@ -1,0 +1,17 @@
+<ion-view title="Gallery">
+
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+
+    <ion-content class="has-header">
+		<div class="list">
+
+		    <a class="item item-thumbnail-left" ng-href="#/app/gallery/detail/{{photo.id}}" ng-repeat="photo in photos.response.posts">
+		      	<img ng-init="lastIdxPhoto = photo.photos[0].alt_sizes.length - 1" ng-src="{{photo.photos[0].alt_sizes[lastIdxPhoto].url}}">
+		      	<div ng-bind-html="photo.caption"></div>
+		    </a>
+
+		</div>
+    </ion-content>
+</ion-view>

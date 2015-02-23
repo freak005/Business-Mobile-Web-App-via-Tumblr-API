@@ -1,0 +1,37 @@
+<div class="card">
+
+  <div class="item item-body">
+    <ion-slide-box show-pager="true" ng-if="(post.photos.length-1)">
+      <ion-slide ng-repeat="image in post.photos">
+        <img class="full-image" ng-src="{{image.alt_sizes[0].url}}"  ng-click="openModal(post.photos)">
+      </ion-slide>
+    </ion-slide-box>
+
+    <ion-slide-box show-pager="false" ng-if="!(post.photos.length-1)">
+      <ion-slide ng-repeat="image in post.photos">
+         <img class="full-image" ng-src="{{image.alt_sizes[0].url}}"  ng-click="openModal(post.photos)">
+      </ion-slide>
+    </ion-slide-box>
+
+    <div ng-bind-html="post.caption"></div>
+  </div>
+
+  <script id="image-modal.html" type="text/ng-template">
+    <div class="modal image-modal transparent" ng-click="closeModal()">
+
+      <ion-slide-box show-pager="false" ng-if="(modalPhotos.length-1)">
+        <ion-slide ng-repeat="image in modalPhotos">
+          <img ng-src="{{image.original_size.url}}" class="fullscreen-image" />
+        </ion-slide>
+      </ion-slide-box>
+
+      <ion-slide-box show-pager="false" ng-if="!(modalPhotos.length-1)">
+        <ion-slide>
+          <img ng-src="{{modalPhotos[0].original_size.url}}" class="fullscreen-image" />
+        </ion-slide>
+      </ion-slide-box>
+
+    </div>
+  </script>
+
+</div>
